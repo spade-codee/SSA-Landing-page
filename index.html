@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="base-apparel-coming-soon-master/images/favicon-32x32.png" type="image/icon type">
+    <title> Base Apparel coming soon page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="container">
+        <div class="content-wrapper">
+            <header>
+                <img src="base-apparel-coming-soon-master/images/logo.svg" alt="Base Apparel" class="logo">
+            </header>
+            
+            <div class="content">
+                <h1><span>We're</span> coming soon</h1>
+                
+                <p class="description">
+                    Hello fellow shoppers! We're currently building our new fashion store. 
+                    Add your email below to stay up-to-date with announcements and our launch deals.
+                </p>
+
+                <form id="email-form" novalidate>
+                    <div class="input-wrapper">
+                        <input 
+                            type="email" 
+                            placeholder="Email Address"
+                            id="email-input"
+                            aria-label="Email Address">
+                        <button type="submit" aria-label="Submit">
+                            <img src="./base-apparel-coming-soon-master/images/icon-arrow.svg" alt="">
+                        </button>
+                        <img src="./base-apparel-coming-soon-master/images/icon-error.svg" alt="" class="error-icon">
+                    </div>
+                    <p class="error-message">Please provide a valid email</p>
+                </form>
+            </div>
+        </div>
+        
+        <div class="hero-image"></div>
+    </main>
+
+    <footer class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="https://www.instagram.com/mic.haelo1?igsh=MTdlOXd2dmRoeHc3aw==">Sunmisola</a>.
+    </footer>
+
+    <script>
+        const form = document.getElementById('email-form');
+        const email = document.getElementById('email-input');
+        
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email.value || !emailRegex.test(email.value)) {
+                form.classList.add('error');
+            } else {
+                form.classList.remove('error');
+            }
+        });
+    </script>
+</body>
+</html>
